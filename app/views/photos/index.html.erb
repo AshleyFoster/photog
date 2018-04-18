@@ -1,0 +1,9 @@
+<%= link_to 'Click here to add a photo to your album', new_photo_path %>
+
+<% if @photos.any? %>
+  <% @photos.each do |photo| %>
+    <%= image_tag photo.image.url(:large) %>
+  <% end %>
+<% else %>
+  <h3>There are no photos added yet!</h3>
+<% end %>
